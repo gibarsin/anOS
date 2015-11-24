@@ -1,4 +1,5 @@
 #include <video_manager.h>
+#include <video.h>
 #include <define.h>
 
 void manager_video_initialize() {
@@ -14,4 +15,8 @@ void manager_video_print_string(char * str) {
 
 void manager_video_print_char(char c) {
 	video_print_char(c);
+}
+
+void manager_video_print_delete() {
+	video_print_delete();
 }

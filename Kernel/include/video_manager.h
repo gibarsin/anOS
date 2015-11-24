@@ -18,4 +18,9 @@ void manager_video_print_string(char * str);
  */
 void manager_video_print_char(char c);
 
+/**
+ * +++document
+ */
+void manager_video_print_delete();
+
 #endif

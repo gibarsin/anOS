@@ -9,7 +9,7 @@ extern char endOfBinary;
 void * memset(void * destiny, int32_t c, uint64_t length);
 
 int main() {
-	//Clean BSS
+	/* Clean BSS */
 	memset(&bss, 0, &endOfBinary - &bss);
 }
 

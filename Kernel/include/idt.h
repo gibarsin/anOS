@@ -3,11 +3,18 @@
 
 #include <stdint.h>
 
-/**
- * +++xdebug
- * This should be used only by the IDT Manager
- */
 #define GDT_SEGMENT_CODE	0x08
+
+/* Mark segment as present in memory */
+#define ACS_PRESENT		0x80
+
+/* Interrupt Gate */
+#define ACS_INT_IA_32E 	0x0E
+#define GATE_INTERRUPT 	(ACS_PRESENT | ACS_INT_IA_32E)
+
+/* Trap Gate */
+#define ACS_TRAP_IA_32E	0x0F
+#define GATE_TRAP		(ACS_PRESENT | ACS_TRAP_IA_32E)
 
 /**
  * +++xdocument

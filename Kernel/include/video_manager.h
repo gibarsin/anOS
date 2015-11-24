@@ -3,6 +3,11 @@
 
 /**
  * +++xdocument
+ */
+void manager_video_initialize();
+
+/**
+ * +++xdocument
  * @param str [description]
  */
 void manager_video_print_string(char * str);

@@ -4,7 +4,7 @@
 #include <moduleLoader.h>
 #include <naiveConsole.h>
 
-#include <video.h>
+#include <video_manager.h>
 
 extern uint8_t text;
 extern uint8_t rodata;
@@ -103,11 +103,11 @@ int main()
 
 	// ncPrint("[Finished]");
 	
-	video_initialize();
+	manager_video_initialize();
 
-	video_print_char('a');
-	video_print_char('b');
-	video_print_delete();
+	manager_video_print_char('a');
+	manager_video_print_char('b');
+	manager_video_print_delete();
 
 
 	return 0;

@@ -1,6 +1,9 @@
 #include <video_manager.h>
 #include <define.h>
 
+void manager_video_initialize() {
+	video_initialize();
+}
 
 void manager_video_print_string(char * str) {
 	while(*str != NULL) {

@@ -104,6 +104,8 @@ int main()
 
 	// ncPrint("[Finished]");
 	
+	manager_idt_initialize();
+	
 	manager_video_initialize();
 
 	manager_video_clear();

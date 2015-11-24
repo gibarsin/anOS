@@ -5,6 +5,7 @@
 #include <naiveConsole.h>
 
 #include <video_manager.h>
+#include <idt_manager.h>
 
 extern uint8_t text;
 extern uint8_t rodata;
@@ -105,14 +106,9 @@ int main()
 	
 	manager_video_initialize();
 
-	manager_video_print_char('a');
-	manager_video_print_char('b');
-	manager_video_print_delete();
-
 	manager_video_clear();
 
-	manager_video_print_char('a');
-
+	/* +++xtodo: Call the shell module */
 
 	return 0;
 }

@@ -25,9 +25,9 @@ void idt_initialize() {
 
 void idt_setup_descriptor(uint8_t entry_index, uint64_t offset, uint16_t selector, uint8_t flags) {
 	/* Setting the offset */
-	idt_table[entry_index].offset_low = LOW_16(offset);
-	idt_table[entry_index].offset_middle = MID_16(offset);
-	idt_table[entry_index].offset_high = HIGH_32(offset);
+	idt_table[entry_index].offset_low = bits_16(offset, 0);
+	idt_table[entry_index].offset_middle = bits_16(offset, 16);
+	idt_table[entry_index].offset_high = bits_32(offset, 32);
 
 	idt_table[entry_index].selector = selector;
 

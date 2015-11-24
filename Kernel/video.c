@@ -7,6 +7,7 @@
 #define VIDEO_HEIGHT	25
 
 #define VIDEO_SIZE_CELL	2
+#define VIDEO_SIZE_SCREEN	(VIDEO_WIDTH * VIDEO_HEIGHT)
 
 #define VIDEO_DELETE_CHARACTER	0
 
@@ -24,4 +25,14 @@ void video_print_char(char c) {
 void video_print_delete() {
 	video_curr_pos -= VIDEO_SIZE_CELL;
 	*video_curr_pos = VIDEO_DELETE_CHARACTER;
+}
+
+void video_clear() {
+	char * video_iterator = VIDEO_START;
+
+	for(int i = 0; i < VIDEO_SIZE_SCREEN; i+= VIDEO_SIZE_CELL) {
+		video_iterator[i] = VIDEO_DELETE_CHARACTER;
+	}
+
+	video_curr_pos = VIDEO_START;
 }

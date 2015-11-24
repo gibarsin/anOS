@@ -109,6 +109,10 @@ int main()
 	manager_video_print_char('b');
 	manager_video_print_delete();
 
+	manager_video_clear();
+
+	manager_video_print_char('a');
+
 
 	return 0;
 }

@@ -18,4 +18,9 @@ void video_print_char(char c);
  */
 void video_print_delete();
 
+/**
+ * +++xdocument
+ */
+void video_clear();
+
 #endif

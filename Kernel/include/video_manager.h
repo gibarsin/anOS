@@ -23,4 +23,9 @@ void manager_video_print_char(char c);
  */
 void manager_video_print_delete();
 
+/**
+ * +++xdocument
+ */
+void manager_video_clear();
+
 #endif

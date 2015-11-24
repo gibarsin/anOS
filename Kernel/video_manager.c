@@ -20,3 +20,7 @@ void manager_video_print_char(char c) {
 void manager_video_print_delete() {
 	video_print_delete();
 }
+
+void manager_video_clear() {
+	video_clear();
+}

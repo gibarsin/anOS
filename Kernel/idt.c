@@ -1,5 +1,6 @@
 #include <idt.h>
 #include <stdint.h>
+#include <define.h>
 
 #define IDT_START	0
 
@@ -24,9 +25,9 @@ void idt_initialize() {
 
 void idt_setup_descriptor(uint8_t entry_index, uint64_t offset, uint16_t selector, uint8_t flags) {
 	/* Setting the offset */
-	idt_table[entry_index].offset_low = offset & 0xFFFF; /* +++xchange calculations to macros */
-	idt_table[entry_index].offset_middle = (offset >> 16) & 0xFFFF;
-	idt_table[entry_index].offset_high = (offset >> 32) & 0xFFFFFFFF;
+	idt_table[entry_index].offset_low = LOW_16(offset);
+	idt_table[entry_index].offset_middle = MID_16(offset);
+	idt_table[entry_index].offset_high = HIGH_32(offset);
 
 	idt_table[entry_index].selector = selector;
 

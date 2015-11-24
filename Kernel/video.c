@@ -1,7 +1,7 @@
 #include <video.h>
 #include <define.h>
 
-#define VIDEO_START		0xB8000
+#define VIDEO_START		(char *)0xB8000
 
 #define VIDEO_WIDTH		80
 #define VIDEO_HEIGHT	25

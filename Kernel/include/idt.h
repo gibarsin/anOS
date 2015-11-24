@@ -4,6 +4,12 @@
 #include <stdint.h>
 
 /**
+ * +++xdebug
+ * This should be used only by the IDT Manager
+ */
+#define GDT_SEGMENT_CODE	0x08
+
+/**
  * +++xdocument
  */
 void idt_initialize();

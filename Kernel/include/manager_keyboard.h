@@ -4,6 +4,6 @@
 /**
  * +++xdocument
  */
-void manager_handler_keyboard();
+void manager_handler_keyboard(char c);
 
 #endif

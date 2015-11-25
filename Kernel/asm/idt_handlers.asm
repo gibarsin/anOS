@@ -33,6 +33,7 @@ _idt_handler_keyboard:
 	mov rsi, port_read_keyboard
 	call _in
 
+	mov rdi, rax
 	call manager_handler_keyboard
 
 	; C keyboard handler

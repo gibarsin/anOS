@@ -14,8 +14,6 @@ section .text
 align 16
 _idt_handler_timer_tick:
 
-	; C timer tick handler
-
 	/* +++xdebug */
 	mov rdi, 'b'
 	call video_print_char
@@ -35,8 +33,6 @@ _idt_handler_keyboard:
 
 	mov rdi, rax
 	call manager_handler_keyboard
-
-	; C keyboard handler
 
 	iretq
 

@@ -26,7 +26,7 @@ _idt_handler_timer_tick:
 
 align 16
 _idt_handler_keyboard:
-	mov rsi, port_read_keyboard
+	mov rdi, port_read_keyboard
 	call _in
 
 	mov rdi, rax

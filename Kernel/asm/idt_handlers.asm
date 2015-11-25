@@ -3,6 +3,9 @@ global _idt_handler_keyboard
 global _idt_handler_sys_call
 
 extern _pic_irq_acknowledge
+extern handler_timer_tick
+extern handler_keyboard
+extern _in
 
 extern video_print_char
 
@@ -16,6 +19,8 @@ _idt_handler_timer_tick:
 	mov rdi, 'b'
 	call video_print_char
 
+	call manager_handler_timer_tick
+
 	call _pic_irq_acknowledge
 
 	iretq
@@ -24,9 +29,10 @@ align 16
 _idt_handler_keyboard:
 	xor rax, rax; Clean the rax registry
 
-	in al, port_read_keyboard
+	mov rsi, port_read_keyboard
+	call _in
 
-	;in al, 0x60
+	call manager_handler_keyboard
 
 	; C keyboard handler
 

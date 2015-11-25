@@ -10,26 +10,25 @@ section .text
 
 align 16
 _pic_set_mask:
-	push rbp
-	mov rbp, rsp
+	push rsi
 
 	mov rsi, port_write_pic
 	call _out
 
-	mov rsp, rbp
-	pop rbp
+	pop rsi
+
 	ret
 
 align 16
 _pic_irq_acknowledge:
 	push rdi
-	push rdx
+	push rsi
 
 	mov rdi, port_write_irq_acknowledge
 	mov rsi, 20h
 	call _out
 
-	pop rdx
+	pop rsi
 	pop rdi
 
 	ret

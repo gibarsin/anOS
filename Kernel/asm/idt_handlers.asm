@@ -7,8 +7,6 @@ extern manager_handler_timer_tick
 extern manager_handler_keyboard
 extern _in
 
-extern video_print_char
-
 section .text
 
 align 16

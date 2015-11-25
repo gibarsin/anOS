@@ -4,8 +4,6 @@ global _idt_handler_sys_call
 
 extern _pic_irq_acknowledge
 
-extern video_print_char
-
 section .text
 
 align 16
@@ -13,10 +11,6 @@ _idt_handler_timer_tick:
 
 	; C timer tick handler
 
-	mov rdi, 'b'
-	call video_print_char
-
-	mov rdi, 20h
 	call _pic_irq_acknowledge
 
 	iretq

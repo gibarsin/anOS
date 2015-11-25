@@ -13,7 +13,7 @@ _pic_set_mask:
 	push rbp
 	mov rbp, rsp
 
-	mov rdx, port_write_pic
+	mov rsi, port_write_pic
 	call _out
 
 	mov rsp, rbp
@@ -22,12 +22,15 @@ _pic_set_mask:
 
 align 16
 _pic_irq_acknowledge:
+	push rdi
 	push rdx
 
-	mov rdx, 20h
+	mov rdi, port_write_irq_acknowledge
+	mov rsi, 20h
 	call _out
 
 	pop rdx
+	pop rdi
 
 	ret
 
@@ -43,3 +46,4 @@ _sti:
 
 section .data
 	port_write_pic equ 0x21
+	port_write_irq_acknowledge equ 0x20

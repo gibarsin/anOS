@@ -4,7 +4,7 @@ global _idt_handler_sys_call
 
 extern _pic_irq_acknowledge
 extern manager_handler_timer_tick
-extern manager_handler_keyboard
+extern handler_keyboard
 extern _in
 
 section .text
@@ -28,7 +28,7 @@ _idt_handler_keyboard:
 	call _in
 
 	mov rdi, rax
-	call manager_handler_keyboard
+	call handler_keyboard
 
 	call _pic_irq_acknowledge
 

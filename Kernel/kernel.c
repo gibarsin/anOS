@@ -104,11 +104,17 @@ int main()
 
 	// ncPrint("[Finished]");
 	
+	_cli();
+
+	manager_idt_pic_mask(0xFF);
 	manager_idt_initialize();
-	
+	manager_idt_pic_mask(0xFE);
+
 	manager_video_initialize();
 
-	manager_video_clear();
+	//manager_video_clear();
+
+	_sti();
 
 	/* +++xtodo: Call the shell module */
 

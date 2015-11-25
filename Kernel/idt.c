@@ -11,10 +11,11 @@ typedef struct idt_descriptor_t idt_descriptor_t;
 struct idt_descriptor_t {
 	uint16_t offset_low;
 	uint16_t selector;
-	uint8_t zero;
+	uint8_t zero_low;
 	uint8_t flags;
 	uint16_t offset_middle;
 	uint32_t offset_high;
+	uint32_t zero_high;
 };
 
 static idt_descriptor_t * idt_table;
@@ -33,6 +34,6 @@ void idt_setup_descriptor(uint8_t entry_index, uint64_t offset, uint16_t selecto
 
 	idt_table[entry_index].flags = flags;
 	
-	idt_table[entry_index].zero = 0;
-
+	idt_table[entry_index].zero_low = 0;
+	idt_table[entry_index].zero_high = 0;
 }

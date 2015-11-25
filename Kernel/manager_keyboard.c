@@ -1,5 +1,9 @@
 #include <manager_keyboard.h>
 
-void manager_handler_keyboard(char c) {
-	video_print_char('a');
+#define KEYBOARD_SIZE_BUFFER	512
+
+static char keyboard_buffer[KEYBOARD_SIZE_BUFFER];
+
+void manager_handler_keyboard(uint8_t code) {
+	
 }

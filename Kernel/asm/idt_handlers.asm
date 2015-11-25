@@ -16,6 +16,7 @@ _idt_handler_timer_tick:
 
 	; C timer tick handler
 
+	/* +++xdebug */
 	mov rdi, 'b'
 	call video_print_char
 
